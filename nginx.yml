@@ -7,8 +7,14 @@
 
   tasks:
     - name: Ensure nginx is installed
-      apt:
+      package:
         name: nginx
+        state: latest
+        update_cache: yes
+
+    - name: Ensure policycoreutils-python-utils is installed
+      package:
+        name: policycoreutils-python-utils
         state: latest
         update_cache: yes
 
